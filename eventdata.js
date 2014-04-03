@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	var dataURL = "eventdata.xml";
+	var dataURL = "http://home.d3sunguide.com/test/c2c/eventdata.xml";
 	$.get(dataURL, function(rawXML) {
 
 		var xml = $(rawXML).text();
