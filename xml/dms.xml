@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<markers>
+	<marker>
+		<id>50</id>
+		<chevron>images/i-10_small.png</chevron>
+		<heading>at US-90 / W 9 Mile Rd</heading>
+		<image>http://www.d3sunguide.com/DMSImageGen.ashx?dmsId=50:D3%20Sunguide</image>
+		<lat>30.542058</lat>
+		<lng>-87.345978</lng>
+	</marker>
+	<marker>
+		<id>47</id>
+		<chevron>images/i-10_small.png</chevron>
+		<heading>at US-29 / Pensacola Blvd</heading>
+		<image>http://www.d3sunguide.com/DMSImageGen.ashx?dmsId=47:D3%20Sunguide</image>
+		<lat>30.507753</lat>
+		<lng>-87.288292</lng>
+	</marker>
+</markers>
