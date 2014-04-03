@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<markers>
+	<marker>
+		<chevron>images/i-10_small.png</chevron>
+		<id>00</id>
+		<heading>at Agriculture Station</heading>
+		<image>http://img.d3sunguide.com/cctv/CCTV_I-10_00-6_EB.jpg</image>
+		<lat>30.570244</lat>
+		<lng>-87.402172</lng>
+	</marker>
+	<marker>
+		<id>01</id>
+		<chevron>images/i-10_small.png</chevron>
+		<heading>at Beulah Rd</heading>
+		<image>http://img.d3sunguide.com/cctv/CCTV_I-10_01-6_EB.jpg</image>
+		<lat>30.565172</lat>
+		<lng>-87.385797</lng>
+	</marker>
+</markers>
