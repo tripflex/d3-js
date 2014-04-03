@@ -18,7 +18,7 @@ $(document).ready(function() {
 				stalledvehicle: 'Stalled Vehicle'
 			};
 
-			var importantEvents = ['debris', 'vehiclefire'];
+			var importantEvents = ['vehiclecollision', 'vehiclefire'];
 			var invalidTypes = ['Closed', 'Weather', 'Visibility', 'Vehicle Alert'];
 
 			// Shorthand IF Statement
