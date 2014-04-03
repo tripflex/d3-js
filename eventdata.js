@@ -35,7 +35,7 @@ $(document).ready(function() {
 			// }
 
 			// Check array values, will return index number if found, otherwise returns -1
-			if (invalidTypes.indexOf(typeDesc) == -1) {
+			if (invalidTypes.indexOf(typeDesc) == -1 || invalidTypes.indexOf(status) == -1) {
 				if (!lanesAffected) lanesAffected = "None";
 				var buildHTML = '<li class="title"> ' + typeDesc + '</li><li class="tvtData"> Last Updated: ' + lastUpdated + '</li><li class="tvtData"> Lanes Affected: ' + lanesAffected + '</li>';
 
