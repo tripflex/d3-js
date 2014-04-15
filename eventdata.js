@@ -1,5 +1,11 @@
+
+$(".refresh").click(function(){
+	$( "#replace2" ).load( "events.html" )
+});
+
+
 $(document).ready(function(){
-    var dataURL = "http://home.d3sunguide.com/test/c2c/eventdata.xml";
+    var dataURL = "http://test.d3sunguide.com/c2c/eventdata.xml";
     $.get(dataURL, function (rawXML) {
         
 
@@ -18,14 +24,11 @@ $(document).ready(function(){
 			
 			if ( type == "vehiclecollision" ) {
 				var typeDesc = "Crash";
-			}
-			if ( type == "debris" ) {
+			}if ( type == "debris" ) {
 				var typeDesc = "Debris";
-			}
-			if ( type == "vehiclefire" ) {
+			}if ( type == "vehiclefire" ) {
 				var typeDesc = "Vehicle Fire";
-			}
-			if ( type == "stalledvehicle" ) {
+			}if ( type == "stalledvehicle" ) {
 				var typeDesc = "Stalled Vehicle";
 			}
 			
