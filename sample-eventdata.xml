@@ -1,0 +1,434 @@
+<?xml version="1.0"?>
+<RequestNetsResponse xmlns="http://its.gov/c2c_webservices">
+	<RequestNetsResult>
+			<eventData>
+				<net id="District 3" name="District 3">
+					<event id="86379" netId="District 3" updateTime="2014-04-07T13:50:40-05:00" xmlns="http://its.gov/c2c_icd">
+						<updateTimestamp>2014-04-07T13:50:40-05:00</updateTimestamp>
+						<category>Current</category>
+						<severity>Unknown</severity>
+						<updateType>Update</updateType>
+						<primaryLoc>
+							<lat>30503043</lat>
+							<lon>-87178616</lon>
+							<offset>0.00</offset>
+							<locationId>2282</locationId>
+						</primaryLoc>
+						<status>Unresolved</status>
+						<source>ITMS CCTV</source>
+						<contact>119</contact>
+						<messageCodes>
+							<code1>2081</code1>
+						</messageCodes>
+						<affectedLanes rightShoulder="true">Right Shoulder Blocked</affectedLanes>
+						<type unknown="true"/>
+						<typeDesc>Abandoned Vehicle</typeDesc>
+						<roadCond dry="true"/>
+						<weatherCond sun="true"/>
+						<startTimestamp>2014-04-07T13:46:44-05:00</startTimestamp>
+						<atisSeverity>
+							<severity>Minor</severity>
+							<timestamp>2014-04-07T13:50:40-05:00</timestamp>
+						</atisSeverity>
+					</event>
+					<event id="86449" netId="District 3" updateTime="2014-04-08T10:14:58-05:00" xmlns="http://its.gov/c2c_icd">
+						<updateTimestamp>2014-04-08T10:14:58-05:00</updateTimestamp>
+						<category>Current</category>
+						<severity>Unknown</severity>
+						<updateType>Update</updateType>
+						<primaryLoc>
+							<lat>30619004</lat>
+							<lon>-86959576</lon>
+							<offset>0.00</offset>
+							<locationId>2075</locationId>
+						</primaryLoc>
+						<status>Unresolved</status>
+						<source>ITMS CCTV</source>
+						<contact>119</contact>
+						<messageCodes>
+							<code1>211</code1>
+							<code4>2050</code4>
+						</messageCodes>
+						<affectedLanes rightShoulder="true">Right Shoulder Blocked</affectedLanes>
+						<type stalledVehicle="true"/>
+						<roadCond dry="true"/>
+						<weatherCond sun="true"/>
+						<startTimestamp>2014-04-08T09:46:59-05:00</startTimestamp>
+						<atisSeverity>
+							<severity>Minor</severity>
+							<timestamp>2014-04-08T10:14:58-05:00</timestamp>
+						</atisSeverity>
+					</event>
+					<event id="86485" netId="District 3" updateTime="2014-04-08T10:55:27-05:00" xmlns="http://its.gov/c2c_icd">
+						<updateTimestamp>2014-04-08T10:55:27-05:00</updateTimestamp>
+						<category>Current</category>
+						<severity>Minor</severity>
+						<updateType>Update</updateType>
+						<primaryLoc>
+							<lat>30480263</lat>
+							<lon>-87234621</lon>
+							<offset>0.00</offset>
+							<locationId>2591</locationId>
+						</primaryLoc>
+						<status>Confirmed</status>
+						<source>Transfield </source>
+						<contact>226</contact>
+						<messageCodes>
+							<code1>95</code1>
+							<code4>2050</code4>
+						</messageCodes>
+						<affectedLanes rightShoulder="true">Right Shoulder Blocked</affectedLanes>
+						<type unknown="true"/>
+						<roadCond dry="true"/>
+						<weatherCond sun="true"/>
+						<startTimestamp>2014-04-08T10:49:25-05:00</startTimestamp>
+						<atisSeverity>
+							<severity>Minor</severity>
+							<timestamp>2014-04-08T10:53:08-05:00</timestamp>
+						</atisSeverity>
+					</event>
+					<event id="86465" netId="District 3" updateTime="2014-04-08T10:38:19-05:00" xmlns="http://its.gov/c2c_icd">
+						<updateTimestamp>2014-04-08T10:38:19-05:00</updateTimestamp>
+						<category>Current</category>
+						<severity>Unknown</severity>
+						<updateType>Update</updateType>
+						<primaryLoc>
+							<lat>30533765</lat>
+							<lon>-87128148</lon>
+							<offset>0.00</offset>
+							<locationId>2711</locationId>
+						</primaryLoc>
+						<status>Unresolved</status>
+						<source>Road Ranger</source>
+						<contact>150</contact>
+						<messageCodes>
+							<code1>2081</code1>
+							<code4>2050</code4>
+						</messageCodes>
+						<affectedLanes rightShoulder="true">Right Shoulder Blocked</affectedLanes>
+						<type unknown="true"/>
+						<typeDesc>Abandoned Vehicle</typeDesc>
+						<roadCond dry="true"/>
+						<weatherCond sun="true"/>
+						<startTimestamp>2014-04-08T10:32:36-05:00</startTimestamp>
+						<atisSeverity>
+							<severity>Minor</severity>
+							<timestamp>2014-04-08T10:38:19-05:00</timestamp>
+						</atisSeverity>
+					</event>
+					<event id="86505" netId="District 3" updateTime="2014-04-08T12:01:32-05:00" xmlns="http://its.gov/c2c_icd">
+						<updateTimestamp>2014-04-08T12:01:32-05:00</updateTimestamp>
+						<category>Current</category>
+						<severity>Unknown</severity>
+						<updateType>Update</updateType>
+						<primaryLoc>
+							<lat>30536168</lat>
+							<lon>-87338562</lon>
+							<offset>0.00</offset>
+							<locationId>2601</locationId>
+						</primaryLoc>
+						<status>Confirmed</status>
+						<source>FHP</source>
+						<contact>145</contact>
+						<messageCodes>
+							<code1>61</code1>
+						</messageCodes>
+						<type debris="true"/>
+						<roadCond dry="true"/>
+						<weatherCond sun="true"/>
+						<startTimestamp>2014-04-08T11:55:26-05:00</startTimestamp>
+						<atisSeverity>
+							<severity>Minor</severity>
+							<timestamp>2014-04-08T11:55:55-05:00</timestamp>
+						</atisSeverity>
+					</event>
+				</net>
+			</eventData>
+			<eventData>
+				<net id="District 3" name="District 3">
+					<event id="86379" netId="District 3" updateTime="2014-04-07T13:50:40-05:00" xmlns="http://its.gov/c2c_icd">
+						<updateTimestamp>2014-04-07T13:50:40-05:00</updateTimestamp>
+						<category>Current</category>
+						<severity>Unknown</severity>
+						<updateType>Update</updateType>
+						<primaryLoc>
+							<lat>30503043</lat>
+							<lon>-87178616</lon>
+							<offset>0.00</offset>
+							<locationId>2282</locationId>
+						</primaryLoc>
+						<status>Unresolved</status>
+						<source>ITMS CCTV</source>
+						<contact>119</contact>
+						<messageCodes>
+							<code1>2081</code1>
+						</messageCodes>
+						<affectedLanes rightShoulder="true">Right Shoulder Blocked</affectedLanes>
+						<type unknown="true"/>
+						<typeDesc>Abandoned Vehicle</typeDesc>
+						<roadCond dry="true"/>
+						<weatherCond sun="true"/>
+						<startTimestamp>2014-04-07T13:46:44-05:00</startTimestamp>
+						<atisSeverity>
+							<severity>Minor</severity>
+							<timestamp>2014-04-07T13:50:40-05:00</timestamp>
+						</atisSeverity>
+					</event>
+					<event id="86449" netId="District 3" updateTime="2014-04-08T10:14:58-05:00" xmlns="http://its.gov/c2c_icd">
+						<updateTimestamp>2014-04-08T10:14:58-05:00</updateTimestamp>
+						<category>Current</category>
+						<severity>Unknown</severity>
+						<updateType>Update</updateType>
+						<primaryLoc>
+							<lat>30619004</lat>
+							<lon>-86959576</lon>
+							<offset>0.00</offset>
+							<locationId>2075</locationId>
+						</primaryLoc>
+						<status>Unresolved</status>
+						<source>ITMS CCTV</source>
+						<contact>119</contact>
+						<messageCodes>
+							<code1>211</code1>
+							<code4>2050</code4>
+						</messageCodes>
+						<affectedLanes rightShoulder="true">Right Shoulder Blocked</affectedLanes>
+						<type stalledVehicle="true"/>
+						<roadCond dry="true"/>
+						<weatherCond sun="true"/>
+						<startTimestamp>2014-04-08T09:46:59-05:00</startTimestamp>
+						<atisSeverity>
+							<severity>Minor</severity>
+							<timestamp>2014-04-08T10:14:58-05:00</timestamp>
+						</atisSeverity>
+					</event>
+					<event id="86485" netId="District 3" updateTime="2014-04-08T10:55:27-05:00" xmlns="http://its.gov/c2c_icd">
+						<updateTimestamp>2014-04-08T10:55:27-05:00</updateTimestamp>
+						<category>Current</category>
+						<severity>Minor</severity>
+						<updateType>Update</updateType>
+						<primaryLoc>
+							<lat>30480263</lat>
+							<lon>-87234621</lon>
+							<offset>0.00</offset>
+							<locationId>2591</locationId>
+						</primaryLoc>
+						<status>Confirmed</status>
+						<source>Transfield </source>
+						<contact>226</contact>
+						<messageCodes>
+							<code1>95</code1>
+							<code4>2050</code4>
+						</messageCodes>
+						<affectedLanes rightShoulder="true">Right Shoulder Blocked</affectedLanes>
+						<type unknown="true"/>
+						<roadCond dry="true"/>
+						<weatherCond sun="true"/>
+						<startTimestamp>2014-04-08T10:49:25-05:00</startTimestamp>
+						<atisSeverity>
+							<severity>Minor</severity>
+							<timestamp>2014-04-08T10:53:08-05:00</timestamp>
+						</atisSeverity>
+					</event>
+					<event id="86465" netId="District 3" updateTime="2014-04-08T10:38:19-05:00" xmlns="http://its.gov/c2c_icd">
+						<updateTimestamp>2014-04-08T10:38:19-05:00</updateTimestamp>
+						<category>Current</category>
+						<severity>Unknown</severity>
+						<updateType>Update</updateType>
+						<primaryLoc>
+							<lat>30533765</lat>
+							<lon>-87128148</lon>
+							<offset>0.00</offset>
+							<locationId>2711</locationId>
+						</primaryLoc>
+						<status>Unresolved</status>
+						<source>Road Ranger</source>
+						<contact>150</contact>
+						<messageCodes>
+							<code1>2081</code1>
+							<code4>2050</code4>
+						</messageCodes>
+						<affectedLanes rightShoulder="true">Right Shoulder Blocked</affectedLanes>
+						<type unknown="true"/>
+						<typeDesc>Abandoned Vehicle</typeDesc>
+						<roadCond dry="true"/>
+						<weatherCond sun="true"/>
+						<startTimestamp>2014-04-08T10:32:36-05:00</startTimestamp>
+						<atisSeverity>
+							<severity>Minor</severity>
+							<timestamp>2014-04-08T10:38:19-05:00</timestamp>
+						</atisSeverity>
+					</event>
+					<event id="86505" netId="District 3" updateTime="2014-04-08T12:01:32-05:00" xmlns="http://its.gov/c2c_icd">
+						<updateTimestamp>2014-04-08T12:01:32-05:00</updateTimestamp>
+						<category>Current</category>
+						<severity>Unknown</severity>
+						<updateType>Update</updateType>
+						<primaryLoc>
+							<lat>30536168</lat>
+							<lon>-87338562</lon>
+							<offset>0.00</offset>
+							<locationId>2601</locationId>
+						</primaryLoc>
+						<status>Confirmed</status>
+						<source>FHP</source>
+						<contact>145</contact>
+						<messageCodes>
+							<code1>61</code1>
+						</messageCodes>
+						<type debris="true"/>
+						<roadCond dry="true"/>
+						<weatherCond sun="true"/>
+						<startTimestamp>2014-04-08T11:55:26-05:00</startTimestamp>
+						<atisSeverity>
+							<severity>Minor</severity>
+							<timestamp>2014-04-08T11:55:55-05:00</timestamp>
+						</atisSeverity>
+					</event>
+				</net>
+			</eventData>
+			<eventData>
+				<net id="District 3" name="District 3">
+					<event id="86379" netId="District 3" updateTime="2014-04-07T13:50:40-05:00" xmlns="http://its.gov/c2c_icd">
+						<updateTimestamp>2014-04-07T13:50:40-05:00</updateTimestamp>
+						<category>Current</category>
+						<severity>Unknown</severity>
+						<updateType>Update</updateType>
+						<primaryLoc>
+							<lat>30503043</lat>
+							<lon>-87178616</lon>
+							<offset>0.00</offset>
+							<locationId>2282</locationId>
+						</primaryLoc>
+						<status>Unresolved</status>
+						<source>ITMS CCTV</source>
+						<contact>119</contact>
+						<messageCodes>
+							<code1>2081</code1>
+						</messageCodes>
+						<affectedLanes rightShoulder="true">Right Shoulder Blocked</affectedLanes>
+						<type unknown="true"/>
+						<typeDesc>Abandoned Vehicle</typeDesc>
+						<roadCond dry="true"/>
+						<weatherCond sun="true"/>
+						<startTimestamp>2014-04-07T13:46:44-05:00</startTimestamp>
+						<atisSeverity>
+							<severity>Minor</severity>
+							<timestamp>2014-04-07T13:50:40-05:00</timestamp>
+						</atisSeverity>
+					</event>
+					<event id="86449" netId="District 3" updateTime="2014-04-08T10:14:58-05:00" xmlns="http://its.gov/c2c_icd">
+						<updateTimestamp>2014-04-08T10:14:58-05:00</updateTimestamp>
+						<category>Current</category>
+						<severity>Unknown</severity>
+						<updateType>Update</updateType>
+						<primaryLoc>
+							<lat>30619004</lat>
+							<lon>-86959576</lon>
+							<offset>0.00</offset>
+							<locationId>2075</locationId>
+						</primaryLoc>
+						<status>Unresolved</status>
+						<source>ITMS CCTV</source>
+						<contact>119</contact>
+						<messageCodes>
+							<code1>211</code1>
+							<code4>2050</code4>
+						</messageCodes>
+						<affectedLanes rightShoulder="true">Right Shoulder Blocked</affectedLanes>
+						<type stalledVehicle="true"/>
+						<roadCond dry="true"/>
+						<weatherCond sun="true"/>
+						<startTimestamp>2014-04-08T09:46:59-05:00</startTimestamp>
+						<atisSeverity>
+							<severity>Minor</severity>
+							<timestamp>2014-04-08T10:14:58-05:00</timestamp>
+						</atisSeverity>
+					</event>
+					<event id="86485" netId="District 3" updateTime="2014-04-08T10:55:27-05:00" xmlns="http://its.gov/c2c_icd">
+						<updateTimestamp>2014-04-08T10:55:27-05:00</updateTimestamp>
+						<category>Current</category>
+						<severity>Minor</severity>
+						<updateType>Update</updateType>
+						<primaryLoc>
+							<lat>30480263</lat>
+							<lon>-87234621</lon>
+							<offset>0.00</offset>
+							<locationId>2591</locationId>
+						</primaryLoc>
+						<status>Confirmed</status>
+						<source>Transfield </source>
+						<contact>226</contact>
+						<messageCodes>
+							<code1>95</code1>
+							<code4>2050</code4>
+						</messageCodes>
+						<affectedLanes rightShoulder="true">Right Shoulder Blocked</affectedLanes>
+						<type unknown="true"/>
+						<roadCond dry="true"/>
+						<weatherCond sun="true"/>
+						<startTimestamp>2014-04-08T10:49:25-05:00</startTimestamp>
+						<atisSeverity>
+							<severity>Minor</severity>
+							<timestamp>2014-04-08T10:53:08-05:00</timestamp>
+						</atisSeverity>
+					</event>
+					<event id="86465" netId="District 3" updateTime="2014-04-08T10:38:19-05:00" xmlns="http://its.gov/c2c_icd">
+						<updateTimestamp>2014-04-08T10:38:19-05:00</updateTimestamp>
+						<category>Current</category>
+						<severity>Unknown</severity>
+						<updateType>Update</updateType>
+						<primaryLoc>
+							<lat>30533765</lat>
+							<lon>-87128148</lon>
+							<offset>0.00</offset>
+							<locationId>2711</locationId>
+						</primaryLoc>
+						<status>Unresolved</status>
+						<source>Road Ranger</source>
+						<contact>150</contact>
+						<messageCodes>
+							<code1>2081</code1>
+							<code4>2050</code4>
+						</messageCodes>
+						<affectedLanes rightShoulder="true">Right Shoulder Blocked</affectedLanes>
+						<type unknown="true"/>
+						<typeDesc>Abandoned Vehicle</typeDesc>
+						<roadCond dry="true"/>
+						<weatherCond sun="true"/>
+						<startTimestamp>2014-04-08T10:32:36-05:00</startTimestamp>
+						<atisSeverity>Major, Minor, Intermediate, Unknown
+									
+							<severity>Minor</severity>
+							<timestamp>2014-04-08T10:38:19-05:00</timestamp></atisSeverity>
+					</event>
+					<event id="86505" netId="District 3" updateTime="2014-04-08T12:01:32-05:00" xmlns="http://its.gov/c2c_icd">
+						<updateTimestamp>2014-04-08T12:01:32-05:00</updateTimestamp>
+						<category>Current</category>
+						<severity>Unknown</severity>
+						<updateType>Update</updateType>
+						<primaryLoc>
+							<lat>30536168</lat>
+							<lon>-87338562</lon>
+							<offset>0.00</offset>
+							<locationId>2601</locationId>
+						</primaryLoc>
+						<status>Confirmed</status>
+						<source>FHP</source>
+						<contact>145</contact>
+						<messageCodes>
+							<code1>61</code1>
+						</messageCodes>
+						<type debris="true"/>
+						<roadCond dry="true"/>
+						<weatherCond sun="true"/>
+						<startTimestamp>2014-04-08T11:55:26-05:00</startTimestamp>
+						<atisSeverity>
+							<severity>Minor</severity>
+							<timestamp>2014-04-08T11:55:55-05:00</timestamp>
+						</atisSeverity>
+					</event>
+				</net>
+			</eventData>
+	</RequestNetsResult>
+</RequestNetsResponse>
