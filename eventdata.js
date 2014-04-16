@@ -1,122 +1,147 @@
-$(".refresh").click(function() {
-    $("#replace2").load("events.html")
-});
-
+var localeDataURL = "http://test.d3sunguide.com/c2c/localedata.xml";
+var eventDataURL = "http://test.d3sunguide.com/c2c/eventdata.xml";
 var processedEvents = [];
+var possibleLanes = ['entranceRamp', 'hovLane', 'exitRamp', 'lane1', 'lane2', 'lane3', 'lane4', 'lane5', 'lane6', 'rightShoulder', 'leftShoulder'];
+var priorityLanes = ['entranceRamp', 'hovLane', 'exitRamp', 'lane1', 'lane2', 'lane3', 'lane4', 'lane5', 'lane6'];
+var shoulderLanes = ['rightShoulder', 'leftShoulder'];
 
-function AddAffectedLanesEvent(eventID, priority, lanes){
-	var affectedLaneData = {
-		eventID:eventID,
-		priority:priority,
-		updateTimestamp: updateTimestamp,
-		lat: lat,
-		lon: lon,
-		locationID: locationID,
-		type: type,
-		affectedLanes: affectedLanes
-	}
-	processedEvents.push(affectedLaneData);
+// Incremental values used to increase priority
+var incMajorSeverity = 2;
+var incMinorSeverity = 0;
+var incPriorityEventTypes = 0;
+var incPriorityLanes = 1;
+var incEachAffectedLane = 1;
+
+// Important Events will be added to top, others added to bottom
+var priorityEventTypes = ['Debris', 'Vehicle Fire'];
+// Invalid types will be ignored
+var invalidTypes = ['Closed', 'Weather', 'Visibility', 'Vehicle Alert'];
+// Define types
+var types = {
+    vehiclecollision: 'Crash',
+    debris: 'Debris',
+    vehiclefire: 'Vehicle Fire',
+    stalledvehicle: 'Stalled Vehicle'
+};
+
+function processOtherEvent(event, lastUpdated, typeDesc, lat, lon, locationId, atisSeverity){
+
 }
 
-function processAffectedLanes(eventsToProcess){
+function addAffectedLanesEvent(eventID, priority, lanes) {
+    var affectedLaneData = {
+        eventID: eventID,
+        priority: priority,
+        updateTimestamp: updateTimestamp,
+        lat: lat,
+        lon: lon,
+        locationID: locationID,
+        type: type,
+        affectedLanes: affectedLanes
+    }
+    processedEvents.push(affectedLaneData);
+}
 
+function processAffectedLanes(affectedLanesObj, callback) {
+        var eventPriority = 0;
+        var affectedLanes = [];
+
+        // Loop through each attribute under affectedLanes
+        $.each(affectedLanesObj.attributes, function(i, attrib) {
+            var laneAffected = attrib.name;
+            var isLaneAffected = attrib.value;
+
+            if(isLaneAffected == true && $.inArray(laneAffected, possibleLanes)){
+            	// Increase event priority for each lane blocked
+            	eventPriority += incEachAffectedLane;
+            	// Increase priority if lane is in priorityLanes array
+            	if ($.inArray(laneAffected, priorityLanes)) eventPriority += incPriorityLanes;
+            	affectedLanes.push(laneAffected);
+            }
+        });
+        // Callback after going through each attribute
+        callback(eventPriority, affectedLanes);
+}
+
+function filterConfirmedEvents(xml){
+    // Get only confirmed events, discard any others
+    var confirmedEvents = $(xml).find('event').filter(function() {
+        return $('status', this).text() == 'Confirmed';
+    });
+
+    return confirmedEvents;
 }
 
 $(document).ready(function() {
-    var dataURL = "http://test.d3sunguide.com/c2c/eventdata.xml";
+    $.get(eventDataURL, {}, function(rawXML) {
+        // Get raw XML text from ajax response
+        var xml = $(rawXML).text();
 
+        var confirmedEvents = filterConfirmedEvents(xml);
+
+        // Loop through each confirmed event
+        confirmedEvents.each(function() {
+			// Cache selector
+			var $event = $(this);
+            processEvent($event);
+        });
+        // After processing all events, output event html
+        outputEvents(processedEvents);
+    });
+});
+
+function processEvent(event) {
+	var processLastUpdated = moment(lastUpdated).fromNow();
+	var processAffectedLanes = 'None';
+	var processEventPriority = 0;
+
+	// Cache selector
+	var $event = event;
+    // Get and format last updated timestamp
+    var lastUpdated = moment($event.find('updateTimestamp').text()).fromNow();
+    // Event Types
+    var type = $event.find('type')[0].attributes[0].name;
+    var typeDesc = $event.find('typeDesc').text();
+    var lat = $event.find('lat').text();
+    var lon = $event.find('lon').text();
+    var locationId = $event.find('locationId').text();
+    var atisSeverity = $event.find('atisSeverity > severity');
+
+    // If current event does not have type defined above, set description to Unknown (shorthand IF statement)
+    (!types[type]) ? typeDesc = "Event" : typeDesc = types[type];
+
+    var affectedLanesObj = $event.find('affectedLanes');
+
+	// Omit processing invalid event types
+    if ($.inArray(typeDesc, invalidTypes) == -1) {
+    	if(affectedLanesObj){
+			processAffectedLanes(affectedLanesObj, function(eventPriority, affectedLanes){
+				processAffectedLanes = affectedLanes;
+				processEventPriority = eventPriority;
+			});
+		}
+		// Increase priority if event is in priorityEventTypes array
+		if (priorityEventTypes.indexOf(typeDesc) != -1) processEventPriority += incPriorityEventTypes;
+		// Increase priority based on severity
+		if (atisSeverity == 'Major') processEventPriority += incMajorSeverity;
+		if (atisSeverity == 'Minor') processEventPriority += incMinorSeverity;
+
+
+    }
+
+}
+
+function getLocaleData(){
     $.get(dataURL, {}, function(rawXML) {
         // Get raw XML text from ajax response
         var xml = $(rawXML).text();
 
-        // Get only confirmed events, discard any others
-        var confirmedEvents = $(xml).find('event').filter(function() {
-            return $('status', this).text() == 'Confirmed';
-        });
-
-
-
-        confirmedEvents.find('affectedLanes').each(function (){
-        	var totalAffectedLanes = 0;
-        	var eventPriority = 0;
-        	$.each(this.attributes, function(i, attrib){
-        		var laneAffected = attrib.name;
-        		var isLaneAffected = attrib.value;
-
-        		// Increase number of lanes affected
-        		if($.inArray(laneAffected, possibleLanes)){
-        			totalAffectedLanes++;
-        		}
-
-        		// Increase priority if lane is in priorityLanes array
-        		if($.inArray(laneAffected, priorityLanes)){
-        			eventPriority++;
-        		}
-        	});
-
-        	var atisSeverity = $(this).find('atisSeverity');
-        	var eventSeverity = atisSeverity.find('severity').text();
-
-        	if(eventSeverity == 'Major'){
-        		eventSeverity++;
-        	}
-
-        });
-
-        // Loop through each confirmed event
-        confirmedEvents.each(function() {
-            // Get and format last updated timestamp
-            var lastUpdated = moment($(this).find('updateTimestamp').text()).fromNow();
-            var status = $(this).find('status').text();
-
-            // Affected Lanes
-            var lane = $(this).find('affectedLanes')[0].attributes[0].name;
-            var lanesAffected = $(this).find('affectedLanes').text();
-
-            var possibleLanes = ['entranceRamp', 'hovLane', 'exitRamp', 'lane1', 'lane2', 'lane3', 'lane4', 'lane5', 'lane6', 'rightShoulder', 'leftShoulder'];
-            var priorityLanes = ['entranceRamp', 'hovLane', 'exitRamp', 'lane1', 'lane2', 'lane3', 'lane4', 'lane5', 'lane6'];
-            var shoulderLanes = ['rightShoulder', 'leftShoulder'];
-
-            var affectedLanesEvent = {};
-
-            $(this).find('affectedLanes').each(this.attributes, function(i, attrib){
-					var name = attrib.name;
-					var value = attrib.value;
-
-				});
-			});
-
-
-            // Event Types
-            var type = $(this).find('type')[0].attributes[0].name;
-            var typeDesc = $(this).find('typeDesc').text();
-            var types = {
-                vehiclecollision: 'Crash',
-                debris: 'Debris',
-                vehiclefire: 'Vehicle Fire',
-                stalledvehicle: 'Stalled Vehicle'
-            };
-
-            // Important Events will be added to top, others added to bottom
-            var importantEvents = ['debris', 'vehiclefire'];
-            // Invalid types will be ignored
-            var invalidTypes = ['Closed', 'Weather', 'Visibility', 'Vehicle Alert'];
-            // If current event does not have type defined above, set description to Unknown (shorthand IF statement)
-            (!types[type]) ? typeDesc = "Unknown Event" : typeDesc = types[type];
-
-            // Check array values, will return index number if found, otherwise returns -1
-            if ( $.inArray(typeDesc, invalidTypes) == -1 ) {
-                if (!lanesAffected) lanesAffected = "None";
-                var buildHTML = '<li class="title"> ' + typeDesc + '</li>';
-                buildHTML += '<li class="tvtData"> Last Updated: ' + lastUpdated + '</li>';
-                buildHTML += '<li class="tvtData"> Lanes Affected: ' + lanesAffected + '</li>';
-                if (importantEvents.indexOf(type) != -1) {
-                    $('#eventdata').prepend(buildHTML);
-                } else {
-                    $('#eventdata').append(buildHTML);
-                }
-            }
-
-        });
     });
+        var buildHTML = '<li class="title"> ' + typeDesc + '</li>';
+        buildHTML += '<li class="tvtData"> Last Updated: ' + lastUpdated + '</li>';
+        buildHTML += '<li class="tvtData"> Lanes Affected: ' + lanesAffected + '</li>';
+}
+
+$(".refresh").click(function() {
+    $("#replace2").load("events.html")
 });
