@@ -13,7 +13,7 @@ var incPriorityLanes = 1;
 var incEachAffectedLane = 1;
 
 // Important Events will be added to top, others added to bottom
-var priorityEventTypes = ['Debris', 'Vehicle Fire'];
+var priorityEventTypes = ['debris', 'vehiclefire'];
 // Invalid types will be ignored
 var invalidTypes = ['Closed', 'Weather', 'Visibility', 'Vehicle Alert'];
 // Define types
@@ -23,24 +23,6 @@ var types = {
     vehiclefire: 'Vehicle Fire',
     stalledvehicle: 'Stalled Vehicle'
 };
-
-function processOtherEvent(event, lastUpdated, typeDesc, lat, lon, locationId, atisSeverity){
-
-}
-
-function addAffectedLanesEvent(eventID, priority, lanes) {
-    var affectedLaneData = {
-        eventID: eventID,
-        priority: priority,
-        updateTimestamp: updateTimestamp,
-        lat: lat,
-        lon: lon,
-        locationID: locationID,
-        type: type,
-        affectedLanes: affectedLanes
-    }
-    processedEvents.push(affectedLaneData);
-}
 
 function processAffectedLanes(affectedLanesObj, callback) {
         var eventPriority = 0;
@@ -72,6 +54,21 @@ function filterConfirmedEvents(xml){
     return confirmedEvents;
 }
 
+function addEvent(eventID, lastUpdated, typeDesc, lat, lon, locationId, atisSeverity, processEventPriority, processAffectedLanes) {
+    var eventData = {
+        eventID: eventID,
+        lastUpdated: lasteUpdated,
+        typeDesc: typeDesc,
+        lat: lat,
+        lon: lon,
+        locationId: locationId,
+        atisSeverity: atisSeverity,
+        eventPriority: processEventPriority,
+        affectedLanes: processAffectedLanes
+    }
+    processedEvents.push(eventData);
+}
+
 $(document).ready(function() {
     $.get(eventDataURL, {}, function(rawXML) {
         // Get raw XML text from ajax response
@@ -91,29 +88,32 @@ $(document).ready(function() {
 });
 
 function processEvent(event) {
-	var processLastUpdated = moment(lastUpdated).fromNow();
 	var processAffectedLanes = 'None';
 	var processEventPriority = 0;
 
 	// Cache selector
 	var $event = event;
-    // Get and format last updated timestamp
-    var lastUpdated = moment($event.find('updateTimestamp').text()).fromNow();
-    // Event Types
+
+    // Event Type handling
     var type = $event.find('type')[0].attributes[0].name;
     var typeDesc = $event.find('typeDesc').text();
-    var lat = $event.find('lat').text();
-    var lon = $event.find('lon').text();
-    var locationId = $event.find('locationId').text();
-    var atisSeverity = $event.find('atisSeverity > severity');
-
     // If current event does not have type defined above, set description to Unknown (shorthand IF statement)
     (!types[type]) ? typeDesc = "Event" : typeDesc = types[type];
 
-    var affectedLanesObj = $event.find('affectedLanes');
-
 	// Omit processing invalid event types
     if ($.inArray(typeDesc, invalidTypes) == -1) {
+    	var eventID = $event.find('event[id]').text();
+    	// Location
+	    var lat = $event.find('lat').text();
+	    var lon = $event.find('lon').text();
+	    var locationId = $event.find('locationId').text();
+	    // Get and format last updated timestamp
+    	var lastUpdated = moment($event.find('updateTimestamp').text()).fromNow();
+    	// Severity
+    	var atisSeverity = $event.find('atisSeverity > severity');
+    	// Check if lanes are affected
+    	var affectedLanesObj = $event.find('affectedLanes');
+    	// Process affected lanes
     	if(affectedLanesObj){
 			processAffectedLanes(affectedLanesObj, function(eventPriority, affectedLanes){
 				processAffectedLanes = affectedLanes;
@@ -121,12 +121,13 @@ function processEvent(event) {
 			});
 		}
 		// Increase priority if event is in priorityEventTypes array
-		if (priorityEventTypes.indexOf(typeDesc) != -1) processEventPriority += incPriorityEventTypes;
+		if (priorityEventTypes.indexOf(type) != -1) processEventPriority += incPriorityEventTypes;
 		// Increase priority based on severity
 		if (atisSeverity == 'Major') processEventPriority += incMajorSeverity;
 		if (atisSeverity == 'Minor') processEventPriority += incMinorSeverity;
 
-
+		// Add event to array
+		addEvent(eventID, lastUpdated, typeDesc, lat, lon, locationId, atisSeverity, processEventPriority, processAffectedLanes);
     }
 
 }
