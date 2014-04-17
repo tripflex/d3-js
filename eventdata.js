@@ -2,7 +2,7 @@
  * @Author: Myles McNamara (myles@smyl.es)
  * @Date:   2014-04-15 12:21:47
  * @Last Modified 2014-04-15
- * @Last Modified time: 2014-04-15 21:45:02
+ * @Last Modified time: 2014-04-17 00:06:02
  */
 var localeDataURL = "c2c/localedata.xml";
 var eventDataURL = "c2c/eventdata.xml";
