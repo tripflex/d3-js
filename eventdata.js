@@ -2,10 +2,10 @@
  * @Author: Myles McNamara (myles@smyl.es)
  * @Date:   2014-04-15 12:21:47
  * @Last Modified 2014-04-15
- * @Last Modified time: 2014-04-16 14:30:09
+ * @Last Modified time: 2014-04-15 21:45:02
  */
-var localeDataURL = "sample-localedata.xml";
-var eventDataURL = "sample-eventdata.xml";
+var localeDataURL = "c2c/localedata.xml";
+var eventDataURL = "c2c/eventdata.xml";
 
 var possibleLanes = ['entranceRamp', 'hovLane', 'exitRamp', 'lane1', 'lane2', 'lane3', 'lane4', 'lane5', 'lane6', 'rightShoulder', 'leftShoulder'];
 var priorityLanes = ['entranceRamp', 'hovLane', 'exitRamp', 'lane1', 'lane2', 'lane3', 'lane4', 'lane5', 'lane6'];
@@ -36,22 +36,56 @@ $(document).ready(function() {
 		// var xml = $(rawXML).text();
 
 		var confirmedEvents = filterConfirmedEvents(rawXML);
-
+//		console.log(confirmedEvents);
 		// Loop through each confirmed event
 		confirmedEvents.each(function() {
 			// Cache selector
 			var $event = $(this);
 			processEvent($event);
 		});
-		// After processing all events, output event html
-		outputEvents(processedEvents);
+		addLocaleData(processedEvents, outputEvents);
 	});
 });
+function addLocaleData(processedEvents, callback){
+	getLocaleData(function(xml){
+		$.each(processedEvents, function(index, value){
+			var locationId = value.locationId;
+//			Find specific locale data from locationId
+			var localeData = $(xml).find('location[id="' + locationId + '"]');
+			processedEvents[index]['roadway'] = localeData.find('roadway').text();
+			processedEvents[index]['dir'] = localeData.find('dir').text();
+			processedEvents[index]['crossStreetOffset'] = localeData.find('crossStreetOffset').text();
+			processedEvents[index]['crossStreet'] = localeData.find('crossStreet').text();
 
+//			Store other locale data for future use
+			processedEvents[index]['mileMarker'] = localeData.find('mileMarker').text();
+			processedEvents[index]['exitNumber'] = localeData.find('exitNumber').text();
+			processedEvents[index]['exitSuffix'] = localeData.find('exitSuffix').text();
+
+//          Store alternate route data for future use
+			var alternateRoutes = {
+				primary: {
+					shortName: localeData.find('alternateRoutes > primary > shortName').text(),
+					description: localeData.find('alternateRoutes > primary > description').text()
+				},
+				secondary: {
+					shortName: localeData.find('alternateRoutes > secondary > shortName').text(),
+					description: localeData.find('alternateRoutes > secondary > description').text()
+				}
+			};
+			processedEvents[index]['alternateRoutes'] = alternateRoutes;
+		});
+	});
+	callback(processedEvents);
+}
 function outputEvents(events) {
-	var newHTML = [];
-	$.each(events, function(index, value) {
-		console.log(value);
+	var sortedEvents = sortEvents(events);
+	getTemplate('event', function(eventTemplate){
+		var renderTemplate = Handlebars.compile(eventTemplate);
+		$.each(sortedEvents, function(index, eventData){
+//			console.log(eventData);
+			$('#eventdata').append(renderTemplate(eventData));
+		});
 	});
 }
 
@@ -108,7 +142,7 @@ function addEvent(eventID, lastUpdated, typeDesc, lat, lon, locationId, atisSeve
 function processEvent(event) {
 	var pAffectedLanes = 'None';
 	var pEventPriority = 0;
-
+	console.log(event);
 	// Cache selector
 	var $event = event;
 
@@ -120,7 +154,7 @@ function processEvent(event) {
 
 	// Omit processing invalid event types
 	if ($.inArray(typeDesc, invalidTypes) == -1) {
-		var eventID = $event.find('event[id]').text();
+		var eventID = $event[0].getAttribute('id');
 		// Location
 		var lat = $event.find('lat').text();
 		var lon = $event.find('lon').text();
@@ -143,33 +177,42 @@ function processEvent(event) {
 		// Process affected lanes
 		if (alAttributesCheck) {
 			var alAttributes = $event.find('affectedLanes')[0].attributes;
-			console.log('Start processing with attributes:');
-			console.log(alAttributes);
 			processAffectedLanes(alAttributes, function(eventPriority, affectedLanes) {
-				console.log(affectedLanes);
-				console.log(eventPriority);
 				pAffectedLanes = affectedLanes;
 				pEventPriority += eventPriority;
 			});
 		}
-		console.log('after if');
 
-		console.log('add event');
 		// Add event to array
 		addEvent(eventID, lastUpdated, typeDesc, lat, lon, locationId, atisSeverity, pEventPriority, pAffectedLanes);
 	}
 
 }
 
-function getLocaleData() {
-	$.get(dataURL, {}, function(rawXML) {
+function getLocaleData(callback) {
+	$.get(localeDataURL, {}, function(rawXML) {
 		// Get raw XML text from ajax response
-		var xml = $(rawXML).text();
-
+//		var xml = $(rawXML).text();
+		callback(rawXML);
 	});
-	var buildHTML = '<li class="title"> ' + typeDesc + '</li>';
-	buildHTML += '<li class="tvtData"> Last Updated: ' + lastUpdated + '</li>';
-	buildHTML += '<li class="tvtData"> Lanes Affected: ' + lanesAffected + '</li>';
+}
+
+function getTemplate(name, callback) {
+	return $.get(name + '.hbs').done(function(src) {
+		callback(src);
+	});
+}
+
+function sortEvents(events){
+	events.sort(function (a, b) {
+		if (a.eventPriority > b.eventPriority)
+			return -1;
+		if (a.eventPriority < b.eventPriority)
+			return 1;
+		// a must be equal to b
+		return 0;
+	});
+	return(events);
 }
 
 $(".refresh").click(function() {
