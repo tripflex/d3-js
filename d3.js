@@ -2,7 +2,7 @@
  * @Author: Myles McNamara
  * @Date:   2014-04-17 17:30:06
  * @Last Modified by:   Myles McNamara
- * @Last Modified time: 2014-04-18 16:07:35
+ * @Last Modified time: 2014-04-23 18:46:11
  */
 
 // Same as document.ready
@@ -34,12 +34,33 @@ $(function() {
     });
 });
 
+function loadCameraFeed(camera) {
+    fullSpinner();
+    var videoURL = 'http://d3sunguide.com/videoclips/';
+    var cameraFeed = $(camera).data('video');
+    var cameraTitle = $(camera).data('title');
+    if (!cameraTitle) cameraTitle = $(camera).text();
+    videoURL += cameraFeed + '.mp4';
+    getTemplate('cctv-video', function(html) {
+        var LiveCCTV = Handlebars.compile(html);
+        var templateData = {
+            refresh: true,
+            type: 'cctv-video',
+            title: cameraTitle,
+            streamURL: videoURL,
+            video: cameraFeed
+        };
+        var cctvFeed = LiveCCTV(templateData);
+        $('#replace2').html(cctvFeed);
+    });
+}
+
 function startRefreshSpin() {
-    $('.page-refresh > .fa-repeat').addClass('fa-spin');
+    $('.page-refresh > img').addClass('spinCircle');
 }
 
 function stopRefreshSpin() {
-    $('.page-refresh > .fa-repeat').removeClass('fa-spin');
+    $('.page-refresh > img').removeClass('spinCircle');
 }
 
 function fullSpinner() {
