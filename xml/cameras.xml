@@ -1,19 +1,376 @@
+<!-- CCTV_{{roadway}}_{{mileMarker}}-{{mileMarkerDec}}_{{dir}} -->
 <?xml version="1.0"?>
 <markers>
 	<marker>
+		<id>c1</id>
 		<chevron>images/i-10_small.png</chevron>
-		<id>00</id>
+		<roadway>I-10</roadway>
+		<mileMarker>0.6</mileMarker>
+		<dir>EB</dir>
 		<heading>at Agriculture Station</heading>
 		<image>http://img.d3sunguide.com/cctv/CCTV_I-10_00-6_EB.jpg</image>
+		<stream>http://d3sunguide.com/videoclips/CCTV_I-10_00-6_EB.mp4</stream>
 		<lat>30.570244</lat>
 		<lng>-87.402172</lng>
 	</marker>
 	<marker>
-		<id>01</id>
+		<id>c2</id>
 		<chevron>images/i-10_small.png</chevron>
 		<heading>at Beulah Rd</heading>
 		<image>http://img.d3sunguide.com/cctv/CCTV_I-10_01-6_EB.jpg</image>
+		<stream>http://d3sunguide.com/videoclips/CCTV_I-10_01-6_EB.mp4</stream>
 		<lat>30.565172</lat>
 		<lng>-87.385797</lng>
+	</marker>
+	<marker>
+	<id>c3</id>
+		<chevron>images/i-10_small.png</chevron>
+		<heading>at Weigh Station</heading>
+		<image>http://img.d3sunguide.com/cctv/CCTV_I-10_03-2_EB.jpg</image>
+		<stream>http://d3sunguide.com/videoclips/CCTV_I-10_03-2_EB.mp4</stream>
+		<lat>30.552822</lat>
+		<lng>-87.361858</lng>
+	</marker>
+	<marker>
+	<id>c4</id>
+		<chevron>images/i-10_small.png</chevron>
+		<heading>at Welcome Center</heading>
+		<image>http://img.d3sunguide.com/cctv/CCTV_I-10_04-2_EB.jpg</image>
+		<stream>http://d3sunguide.com/videoclips/CCTV_I-10_04-2_EB.mp4</stream>
+		<lat>30.543919</lat>
+		<lng>-87.348744</lng>
+	</marker>
+	<marker>
+	<id>c5</id>
+		<chevron>images/i-10_small.png</chevron>
+		<heading>at US-90 / W Nine Mile Rd</heading>
+		<image>http://img.d3sunguide.com/cctv/CCTV_I-10_05-3_M.jpg</image>
+		<stream>http://d3sunguide.com/videoclips/CCTV_I-10_05-3_M.mp4</stream>
+		<lat>30.534947</lat>
+		<lng>-87.335106</lng>
+	</marker>
+	<marker>
+	<id>c6</id>
+		<chevron>images/i-10_small.png</chevron>
+		<heading>at SR-297 / Pine Forest Road</heading>
+		<image>http://img.d3sunguide.com/cctv/CCTV_I-10_06-8_M.jpg</image>
+		<stream>http://d3sunguide.com/videoclips/CCTV_I-10_06-8_M.mp4</stream>
+		<lat>30.521611</lat>
+		<lng>-87.313997</lng>
+	</marker>
+	<marker>
+	<id>c7</id>
+		<chevron>images/i-10_small.png</chevron>
+		<heading>E of SR-297 / Pine Forest Road</heading>
+		<image>http://img.d3sunguide.com/cctv/CCTV_I-10_08-1_EB.jpg</image>
+		<stream>http://d3sunguide.com/videoclips/CCTV_I-10_08-1_EB.mp4</stream>
+		<lat>30.511450</lat>
+		<lng>-87.295358</lng>
+	</marker>
+	<marker>
+	<id>c8</id>
+		<chevron>images/i-10_small.png</chevron>
+		<heading>W of US-29 / Pensacola Blvd</heading>
+		<image>http://img.d3sunguide.com/cctv/CCTV_I-10_09-2_EB.jpg</image>
+		<stream>http://d3sunguide.com/videoclips/CCTV_I-10_09-2_EB.mp4</stream>
+		<lat>30.504267</lat>
+		<lng>-87.279833</lng>
+	</marker>
+	<marker>
+	<id>c9</id>
+		<chevron>images/i-10_small.png</chevron>
+		<heading>EB at US-29 / Pensacola Blvd</heading>
+		<image>http://img.d3sunguide.com/cctv/CCTV_I-10_10-0_EB.jpg</image>
+		<stream>http://d3sunguide.com/videoclips/CCTV_I-10_10-0_EB.mp4</stream>
+		<lat>30.502183</lat>
+		<lng>-87.266586</lng>
+	</marker>
+	<marker>
+	<id>c10</id>
+		<chevron>images/i-10_small.png</chevron>
+		<heading>WB at US-29 / Pensacola Blvd</heading>
+		<image>http://img.d3sunguide.com/cctv/CCTV_I-10_10-0_WB.jpg</image>
+		<stream>http://d3sunguide.com/videoclips/CCTV_I-10_10-0_WB.mp4</stream>
+		<lat>30.504922</lat>
+		<lng>-87.267628</lng>
+	</marker>
+	<marker>
+	<id>c11</id>
+		<chevron>images/i-10_small.png</chevron>
+		<heading>at N Palafox St</heading>
+		<image>http://img.d3sunguide.com/cctv/CCTV_I-10_10-5_WB.jpg</image>
+		<stream>http://d3sunguide.com/videoclips/CCTV_I-10_10-5_WB.mp4</stream>
+		<lat>30.504164</lat>
+		<lng>-87.258186</lng>
+	</marker>
+	<marker>
+	<id>c12</id>
+		<chevron>images/i-10_small.png</chevron>
+		<heading>W of I-110</heading>
+		<image>http://img.d3sunguide.com/cctv/CCTV_I-10_11-4_EB.jpg</image>
+		<stream>http://d3sunguide.com/videoclips/CCTV_I-10_11-4_EB.mp4</stream>
+		<lat>30.503461</lat>
+		<lng>-87.242672</lng>
+	</marker>
+	<marker>
+	<id>c13</id>
+		<chevron>images/i-10_small.png</chevron>
+		<heading>at I-110</heading>
+		<image>http://img.d3sunguide.com/cctv/CCTV_I-10_12-2_EB.jpg</image>
+		<stream>http://d3sunguide.com/videoclips/CCTV_I-10_12-2_EB.mp4</stream>
+		<lat>30.503106</lat>
+		<lng>-87.229742</lng>
+	</marker>
+	<marker>
+	<id>c14</id>
+		<chevron>images/i-10_small.png</chevron>
+		<heading>at SR-291 / N Davis Highway</heading>
+		<image>http://img.d3sunguide.com/cctv/CCTV_I-10_12-7_EB.jpg</image>
+		<stream>http://d3sunguide.com/videoclips/CCTV_I-10_12-7_EB.mp4</stream>
+		<lat>30.503283</lat>
+		<lng>-87.220975</lng>
+	</marker>
+	<marker>
+	<id>c15</id>
+		<chevron>images/i-10_small.png</chevron>
+		<heading>E of SR-291 / N Davis Highway</heading>
+		<image>http://img.d3sunguide.com/cctv/CCTV_I-10_13-7_EB.jpg</image>
+		<stream>http://d3sunguide.com/videoclips/CCTV_I-10_13-7_EB.mp4</stream>
+		<lat>30.502633</lat>
+		<lng>-87.204433</lng>
+	</marker>
+	<marker>
+	<id>c16</id>
+		<chevron>images/i-10_small.png</chevron>
+		<heading>at SR-289 / 9th Ave</heading>
+		<image>http://img.d3sunguide.com/cctv/CCTV_I-10_14-9_EB.jpg</image>
+		<stream>http://d3sunguide.com/videoclips/CCTV_I-10_14-9_EB.mp4</stream>
+		<lat>30.502153</lat>
+		<lng>-87.183689</lng>
+	</marker>
+	<marker>
+	<id>c17</id>
+		<chevron>images/i-10_small.png</chevron>
+		<heading>E of SR-289 / 9th Ave</heading>
+		<image>http://img.d3sunguide.com/cctv/CCTV_I-10_15-7_EB.jpg</image>
+		<stream>http://d3sunguide.com/videoclips/CCTV_I-10_15-7_EB.mp4</stream>
+		<lat>30.502017</lat>
+		<lng>-87.170594</lng>
+	</marker>
+	<marker>
+	<id>c18</id>
+		<chevron>images/i-10_small.png</chevron>
+		<heading>at US-90/SR-10A/Scenic Hwy</heading>
+		<image>http://img.d3sunguide.com/cctv/CCTV_I-10_16-3_M.jpg</image>
+		<stream>http://d3sunguide.com/videoclips/CCTV_I-10_16-3_M.mp4</stream>
+		<lat>30.506714</lat>
+		<lng>-87.162769</lng>
+	</marker>
+	<marker>
+	<id>c19</id>
+		<chevron>images/i-10_small.png</chevron>
+		<heading>on Escambia Bay Bridge West</heading>
+		<image>http://img.d3sunguide.com/cctv/CCTV_I-10_17-3_EB.jpg</image>
+		<stream>http://d3sunguide.com/videoclips/CCTV_I-10_17-3_EB.mp4</stream>
+		<lat>30.516781</lat>
+		<lng>-87.146472</lng>
+	</marker>
+	<marker>
+	<id>c20</id>
+		<chevron>images/i-10_small.png</chevron>
+		<heading>on Escambia Bay Bridge East</heading>
+		<image>http://img.d3sunguide.com/cctv/CCTV_I-10_17-9_EB.jpg</image>
+		<stream>http://d3sunguide.com/videoclips/CCTV_I-10_17-9_EB.mp4</stream>
+		<lat>30.520938</lat>
+		<lng>-87.141151</lng>
+	</marker>
+	<marker>
+	<id>c21</id>
+		<chevron>images/i-10_small.png</chevron>
+		<heading>on Escambia Bay Bridge East End</heading>
+		<image>http://img.d3sunguide.com/cctv/CCTV_I-10_18-9_M.jpg</image>
+		<stream>http://d3sunguide.com/videoclips/CCTV_I-10_18-9_M.mp4</stream>
+		<lat>30.530772</lat>
+		<lng>-87.128642</lng>
+	</marker>
+	<marker>
+	<id>c22</id>
+		<chevron>images/i-10_small.png</chevron>
+		<heading>W of SR-281/Avalon Blvd</heading>
+		<image>http://img.d3sunguide.com/cctv/CCTV_I-10_19-7_WB.jpg</image>
+		<stream>http://d3sunguide.com/videoclips/CCTV_I-10_19-7_WB.mp4</stream>
+		<lat>30.534308</lat>
+		<lng>-87.116028</lng>
+	</marker>
+	<marker>
+	<id>c23</id>
+		<chevron>images/i-10_small.png</chevron>
+		<heading>at SR-281/Avalon Blvd</heading>
+		<image>http://img.d3sunguide.com/cctv/CCTV_I-10_21-4_M.jpg</image>
+		<stream>http://d3sunguide.com/videoclips/CCTV_I-10_21-4_M.mp4</stream>
+		<lat>30.533967</lat>
+		<lng>-87.087986</lng>
+	</marker>
+	<marker>
+	<id>c24</id>
+		<chevron>images/i-10_small.png</chevron>
+		<heading>E of SR-281/Avalon Blvd</heading>
+		<image>http://img.d3sunguide.com/cctv/CCTV_I-10_23-5_EB.jpg</image>
+		<stream>http://d3sunguide.com/videoclips/CCTV_I-10_23-5_EB.mp4</stream>
+		<lat>30.548476</lat>
+		<lng>-87.058806</lng>
+	</marker>
+	<marker>
+	<id>c25</id>
+		<chevron>images/i-10_small.png</chevron>
+		<heading>at CR-191 / Garcon Point</heading>
+		<image>http://img.d3sunguide.com/cctv/CCTV_I-10_25-6_M.jpg</image>
+		<stream>http://d3sunguide.com/videoclips/CCTV_I-10_25-6_M.mp4</stream>
+		<lat>30.569375</lat>
+		<lng>-87.032092</lng>
+	</marker>
+	<marker>
+	<id>c26</id>
+		<chevron>images/i-10_small.png</chevron>
+		<heading>W of Blackwater Bridge</heading>
+		<image>http://img.d3sunguide.com/cctv/CCTV_I-10_26-6_WB.jpg</image>
+		<stream>http://d3sunguide.com/videoclips/CCTV_I-10_26-6_WB.mp4</stream>
+		<lat>30.579394</lat>
+		<lng>-87.019508</lng>
+	</marker>
+	<marker>
+	<id>c27</id>
+		<chevron>images/i-10_small.png</chevron>
+		<heading>at CR-89 / Ward Basin Rd</heading>
+		<image>http://img.d3sunguide.com/cctv/CCTV_I-10_28-1_EB.jpg</image>
+		<stream>http://d3sunguide.com/videoclips/CCTV_I-10_28-1_EB.mp4</stream>
+		<lat>30.593169</lat>
+		<lng>-87.000747</lng>
+	</marker>
+	<marker>
+	<id>c28</id>
+		<chevron>images/i-10_small.png</chevron>
+		<heading>at Rest Area</heading>
+		<image>http://img.d3sunguide.com/cctv/CCTV_I-10_29-9_EB.jpg</image>
+		<stream>http://d3sunguide.com/videoclips/CCTV_I-10_29-9_EB.mp4</stream>
+		<lat>30.610733</lat>
+		<lng>-86.977969</lng>
+	</marker>
+	<marker>
+	<id>c29</id>
+		<chevron>images/i-10_small.png</chevron>
+		<heading>at SR-87</heading>
+		<image>http://img.d3sunguide.com/cctv/CCTV_I-10_30-9_M.jpg</image>
+		<stream>http://d3sunguide.com/videoclips/CCTV_I-10_30-9_M.mp4</stream>
+		<lat>30.618675</lat>
+		<lng>-86.963611</lng>
+	</marker>
+	<marker>
+	<id>c30</id>
+		<chevron>images/i-10_small.png</chevron>
+		<heading>E of SR-87</heading>
+		<image>http://img.d3sunguide.com/cctv/CCTV_I-10_32-6_EB.jpg</image>
+		<stream>http://d3sunguide.com/videoclips/CCTV_I-10_32-6_EB.mp4</stream>
+		<lat>30.626953</lat>
+		<lng>-86.937683</lng>
+	</marker>
+	<marker>
+	<id>c31</id>
+		<chevron>images/i-110_small.png</chevron>
+		<heading>at Civic Center</heading>
+		<image>http://img.d3sunguide.com/cctv/CCTV_I-110_00-1_NB.jpg</image>
+		<stream>http://d3sunguide.com/videoclips/CCTV_I-110_00-1_NB.mp4</stream>
+		<lat>30.417347</lat>
+		<lng>-87.208319</lng>
+	</marker>
+	<marker>
+	<id>c32</id>
+		<chevron>images/i-110_small.png</chevron>
+		<heading>at Chase Street</heading>
+		<image>http://img.d3sunguide.com/cctv/CCTV_I-110_00-2_M.jpg</image>
+		<stream>http://d3sunguide.com/videoclips/CCTV_I-110_00-2_M.mp4</stream>
+		<lat>30.415331</lat>
+		<lng>-87.210831</lng>
+	</marker>
+	<marker>
+	<id>c33</id>
+		<chevron>images/i-110_small.png</chevron>
+		<heading>at US-90/98 / SR-10A / Cervantes St</heading>
+		<image>http://img.d3sunguide.com/cctv/CCTV_I-110_00-4_M.jpg</image>
+		<stream>http://d3sunguide.com/videoclips/CCTV_I-110_00-4_M.mp4</stream>
+		<lat>30.421975</lat>
+		<lng>-87.214147</lng>
+	</marker>
+	<marker>
+	<id>c34</id>
+		<chevron>images/i-110_small.png</chevron>
+		<heading>at Maxwell St</heading>
+		<image>http://img.d3sunguide.com/cctv/CCTV_I-110_01-3_M.jpg</image>
+		<stream>http://d3sunguide.com/videoclips/CCTV_I-110_01-3_M.mp4</stream>
+		<lat>30.435197</lat>
+		<lng>-87.215461</lng>
+	</marker>
+	<marker>
+	<id>c35</id>
+		<chevron>images/i-110_small.png</chevron>
+		<heading>at SR-752 / Texar Dr</heading>
+		<image>http://img.d3sunguide.com/cctv/CCTV_I-110_02-1_NB.jpg</image>
+		<stream>http://d3sunguide.com/videoclips/CCTV_I-110_02-1_NB.mp4</stream>
+		<lat>30.446569</lat>
+		<lng>-87.217667</lng>
+	</marker>
+	<marker>
+	<id>c36</id>
+		<chevron>images/i-110_small.png</chevron>
+		<heading>at SR-295 / E Fairfield Dr</heading>
+		<image>http://img.d3sunguide.com/cctv/CCTV_I-110_02-7_SB.jpg</image>
+		<stream>http://d3sunguide.com/videoclips/CCTV_I-110_02-7_SB.mp4</stream>
+		<lat>30.453761</lat>
+		<lng>-87.223208</lng>
+	</marker>
+	<marker>
+	<id>c37</id>
+		<chevron>images/i-110_small.png</chevron>
+		<heading>at SR-296 / Brent Lane</heading>
+		<image>http://img.d3sunguide.com/cctv/CCTV_I-110_04-1_SB.jpg</image>
+		<stream>http://d3sunguide.com/videoclips/CCTV_I-110_04-1_SB.mp4</stream>
+		<lat>30.472653</lat>
+		<lng>-87.228692</lng>
+	</marker>
+	<marker>
+	<id>c38</id>
+		<chevron>images/i-110_small.png</chevron>
+		<heading>at Airport Blvd</heading>
+		<image>http://img.d3sunguide.com/cctv/CCTV_I-110_04-7_SB.jpg</image>
+		<stream>http://d3sunguide.com/videoclips/CCTV_I-110_04-7_SB.mp4</stream>
+		<lat>30.481150</lat>
+		<lng>-87.230897</lng>
+	</marker>
+	<marker>
+	<id>c39</id>
+		<chevron>images/i-110_small.png</chevron>
+		<heading>at Creighton Road</heading>
+		<image>http://img.d3sunguide.com/cctv/CCTV_I-110_05-6_NB.jpg</image>
+		<stream>http://d3sunguide.com/videoclips/CCTV_I-110_05-6_NB.mp4</stream>
+		<lat>30.495247</lat>
+		<lng>-87.229806</lng>
+	</marker>
+	<marker>
+	<id>c40</id>
+		<chevron>images/us_98_small.png</chevron>
+		<heading> at North End of Pensacola Bay Bridge</heading>
+		<image>http://img.d3sunguide.com/cctv/CCTV_SR-196_NB.jpg</image>
+		<stream>http://d3sunguide.com/videoclips/CCTV_SR-196_NB.mp4</stream>
+		<lat>30.416939</lat>
+		<lng>-87.193342</lng>
+	</marker>
+	<marker>
+	<id>c41</id>
+		<chevron>images/us_98_small.png</chevron>
+		<heading> at South End of Pensacola Bay Bridge</heading>
+		<image>http://img.d3sunguide.com/cctv/CCTV_SR-196_SB.jpg</image>
+		<stream>http://d3sunguide.com/videoclips/CCTV_SR-196_SB.mp4</stream>
+		<lat>30.372417</lat>
+		<lng>-87.176961</lng>
 	</marker>
 </markers>
