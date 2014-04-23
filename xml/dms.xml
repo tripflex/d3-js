@@ -1,19 +1,103 @@
 <?xml version="1.0"?>
 <markers>
 	<marker>
+		<id>47</id>
+		<chevron>images/i-10_small.png</chevron>
+		<heading>EB at US-29 / Pensacola Blvd</heading>
+		<image>http://www.d3sunguide.com/DMSImageGen.ashx?dmsId=47:D3%20Sunguide</image>
+		<lat>30.507753</lat>
+		<lng>-87.288292</lng>
+	</marker>
+
+	<marker>
+		<id>48</id>
+		<chevron>images/i-10_small.png</chevron>
+		<heading>EB at I-110/SR-8A</heading>
+		<image>http://www.d3sunguide.com/DMSImageGen.ashx?dmsId=48:D3%20Sunguide</image>
+		<lat>30.503265</lat>
+		<lng>-87.250156</lng>
+	</marker>
+	<marker>
+		<id>43</id>
+		<chevron>images/i-10_small.png</chevron>
+		<heading>WB at US-29 / Pensacola Blvd</heading>
+		<image>http://www.d3sunguide.com/DMSImageGen.ashx?dmsId=43:D3%20Sunguide</image>
+		<lat>30.505483</lat>
+		<lng>-87.249813</lng>
+	</marker>
+	<marker>
+		<id>46</id>
+		<chevron>images/i-10_small.png</chevron>
+		<heading>EB at US-90/Scenic Highway</heading>
+		<image>http://www.d3sunguide.com/DMSImageGen.ashx?dmsId=46:D3%20Sunguide</image>
+		<lat>30.501046</lat>
+		<lng>-87.176342</lng>
+	</marker>
+	<marker>
+		<id>42</id>
+		<chevron>images/i-10_small.png</chevron>
+		<heading>WB at SR-289/N 9th Ave</heading>
+		<image>http://www.d3sunguide.com/DMSImageGen.ashx?dmsId=42:D3%20Sunguide</image>
+		<lat>30.504448</lat>
+		<lng>-87.176513</lng>
+	</marker>
+	<marker>
 		<id>50</id>
 		<chevron>images/i-10_small.png</chevron>
-		<heading>at US-90 / W 9 Mile Rd</heading>
+		<heading>EB at US-90 / W 9 Mile Rd</heading>
 		<image>http://www.d3sunguide.com/DMSImageGen.ashx?dmsId=50:D3%20Sunguide</image>
 		<lat>30.542058</lat>
 		<lng>-87.345978</lng>
 	</marker>
+
+
+
 	<marker>
-		<id>47</id>
+		<id>52</id>
+		<chevron>images/i-110_small.png</chevron>
+		<heading>NB at SR-295 / E Fairfield</heading>
+		<image>http://www.d3sunguide.com/DMSImageGen.ashx?dmsId=52:D3%20Sunguide</image>
+		<lat>30.437175</lat>
+		<lng>-87.215608</lng>
+	</marker>
+	<marker>
+		<id>51</id>
+		<chevron>images/i-110_small.png</chevron>
+		<heading>NB at SR-296 / Brent Lane</heading>
+		<image>http://www.d3sunguide.com/DMSImageGen.ashx?dmsId=51:D3%20Sunguide</image>
+		<lat>30.461283</lat>
+		<lng>-87.225128</lng>
+	</marker>
+	<marker>
+		<id>53</id>
+		<chevron>images/i-110_small.png</chevron>
+		<heading>SB at SR-295 / E Fairfield</heading>
+		<image>http://www.d3sunguide.com/DMSImageGen.ashx?dmsId=53:D3%20Sunguide</image>
+		<lat>30.464144</lat>
+		<lng>-87.226436</lng>
+	</marker>
+	<marker>
+		<id>49</id>
 		<chevron>images/i-10_small.png</chevron>
-		<heading>at US-29 / Pensacola Blvd</heading>
-		<image>http://www.d3sunguide.com/DMSImageGen.ashx?dmsId=47:D3%20Sunguide</image>
-		<lat>30.507753</lat>
-		<lng>-87.288292</lng>
+		<heading>EB at SR-281 / Avalon Blvd</heading>
+		<image>http://www.d3sunguide.com/DMSImageGen.ashx?dmsId=49:D3%20Sunguide</image>
+		<lat>30.533814</lat>
+		<lng>-87.103856</lng>
+	</marker>
+	<marker>
+		<id>44</id>
+		<chevron>images/i-10_small.png</chevron>
+		<heading>WB at SR-281 / Avalon Blvd.</heading>
+		<image>http://www.d3sunguide.com/DMSImageGen.ashx?dmsId=44:D3%20Sunguide</image>
+		<lat>30.545428</lat>
+		<lng>-87.063558</lng>
+	</marker>
+	<marker>
+		<id>45</id>
+		<chevron>images/i-10_small.png</chevron>
+		<heading>WB at SR-87</heading>
+		<image>http://www.d3sunguide.com/DMSImageGen.ashx?dmsId=45:D3%20Sunguide</image>
+		<lat>30.624375</lat>
+		<lng>-86.946925</lng>
 	</marker>
 </markers>
