@@ -1,30 +1,37 @@
 /*
  * @Author: Myles McNamara
  * @Date:   2014-04-17 17:30:06
- * @Last Modified by:   Myles McNamara
- * @Last Modified time: 2014-04-23 18:46:11
  */
+
+function showEventData(){
+	getTemplate('default', function (html) {
+		var Events = Handlebars.compile(html);
+		var templateData = {
+			refresh: true,
+			type: 'events',
+			title: 'Current Active Events'
+		};
+		$('#replace2').html(Events(templateData));
+		loadEventData();
+	}).then(function () {
+		// Attach to DOM refresh element has to happen after template has been rendered
+		$('#events-refresh').click(function () {
+			startRefreshSpin();
+			loadEventData();
+		});
+	});
+}
 
 // Same as document.ready
 $(function() {
     // Load full spinner while generating output
     fullSpinner();
-    getTemplate('default', function(html) {
-        var Events = Handlebars.compile(html);
-        var templateData = {
-            refresh: true,
-            type: 'events',
-            title: 'Current Active Events'
-        };
-        $('#replace2').html(Events(templateData));
-        loadEventData();
-    }).then(function() {
-        // Attach to DOM refresh element has to happen after template has been rendered
-        $('#events-refresh').click(function() {
-            startRefreshSpin();
-            loadEventData();
-        });
-    });
+
+	showEventData();
+
+	$('.traffic').click(function(){
+		showEventData();
+	});
 
     // CCTV Tab
     $('.cctv').click(function() {
